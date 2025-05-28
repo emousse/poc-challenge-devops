@@ -31,6 +31,8 @@ jobs:
 
       - name: Build frontend application
         run: npm run build
+        env:
+          REACT_APP_TEXT: "I'm REACT_APP_TEXT from GitHub Actions"
 
       - name: Deploy to Surge.sh
         run: |
