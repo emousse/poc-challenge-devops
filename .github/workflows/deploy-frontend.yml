@@ -9,6 +9,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      REACT_APP_TEXT: "I'm REACT_APP_TEXT from GitHub Actions"
     defaults:
       run:
         working-directory: ./projet/frontend
@@ -29,8 +31,6 @@ jobs:
 
       - name: Run tests
         run: npm test
-        env:
-          REACT_APP_TEXT: "I'm REACT_APP_TEXT from GitHub Actions"
 
       - name: Build frontend application
         run: npm run build
