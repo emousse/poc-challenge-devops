@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:  # Ajouter cette ligne
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -29,11 +29,11 @@ jobs:
 
       - name: Run tests
         run: npm test
+        env:
+          REACT_APP_TEXT: "I'm REACT_APP_TEXT from GitHub Actions"
 
       - name: Build frontend application
         run: npm run build
-        env:
-          REACT_APP_TEXT: "I'm REACT_APP_TEXT from GitHub Actions"
 
       - name: Deploy to Surge.sh
         run: |
